@@ -1,5 +1,5 @@
 import { quickActions } from "../data/quick-action";
-import { QuickActionsCard } from "./quick-actrions-card";
+import { QuickActionsCard } from "./quick-actions-card";
 
 export function QuickActionsPanel() {
     return (

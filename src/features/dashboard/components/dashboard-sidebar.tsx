@@ -47,6 +47,14 @@ interface NavSectionProps {
   pathname: string;
 }
 
+/**
+ * Renders a sidebar navigation group with an optional label and a list of menu items.
+ *
+ * @param label - Optional label displayed above the group in uppercase.
+ * @param items - Array of menu items; each item may include `url`, `icon`, and an optional `onClick`.
+ * @param pathname - Current route pathname used to determine an item's active state (exact match for `'/'`, prefix match for other `url`s).
+ * @returns The sidebar group JSX containing the label (when provided) and a menu of buttons or link-wrapped items.
+ */
 function NavSection({ label, items, pathname }: NavSectionProps) {
   return (
     <SidebarGroup>
@@ -92,6 +100,13 @@ function NavSection({ label, items, pathname }: NavSectionProps) {
   );
 }
 
+/**
+ * Render the dashboard sidebar with navigation groups, organization switcher, and user account controls.
+ *
+ * Renders a collapsible sidebar that includes a header with branding and an OrganizationSwitcher, main and "others" navigation sections (link and action items), and a footer with the UserButton. Navigation items compute their active state from the current pathname and support either link URLs or onClick actions.
+ *
+ * @returns The dashboard sidebar element containing header, navigation sections, dividers, and footer controls
+ */
 export function DashboardSidebar() {
   const pathname = usePathname();
   const clerk = useClerk();
